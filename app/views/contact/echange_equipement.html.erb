@@ -1,0 +1,127 @@
+<section class="content_page content_formulaire">
+    <div class="grid-container">
+<h2 class="center">Demande de valeur d'échange de votre équipement</h2>
+            <div class="grid-x">
+
+                <div class="cell large-12">
+                    <div class="grid-x card_resume_usage_echange">
+                        <div class="cell large-9">
+
+                        <div class="card_resume_usage_echange_info">
+
+                                <h3> <%= @equipment.name %></h3>
+
+                            <% if !@equipment.price.nil? %>
+                                <h3><i class="fa fa-comment-dollar"></i> &nbsp; <%= number_to_currency(@equipment.price) %> </h3>
+                            <% else %>
+                                <p>
+                                    <i class="fa fa-comment-dollar"></i> &nbsp;
+                                    <strong>Prix du sur demande</strong>
+                                </p>
+                            <% end %>
+                            <ul>
+                                <li> <strong>Année :</strong> <%= @equipment.year %></li>
+                                <li><strong>Heures/Séparateur : </strong><%= @equipment.hour %> h / <%= @equipment.separate_hour %> h</li>
+                                <li><strong>Motricité : </strong><%= @equipment.traction_type.name %></li>
+                                <li><strong>Puissance : </strong><%= @equipment.power_type.name %></li>
+                            </ul>
+                        </div>
+                        </div>
+                        <div class="cell small-12 medium-12 large-3 flex_center">
+                            <div class="card_resume_usage_echange_image">
+                                <% if @equipment.miniature.attached? && Pathname.new(Rails.application.routes.url_helpers.rails_blob_url(@equipment.miniature, only_path: true)).exist? %>
+                                    <%= image_tag Rails.application.routes.url_helpers.rails_blob_url(@equipment.miniature, only_path: false) %>
+                                <% else %>
+                                    <%= image_tag("placeholder_miniature_equipement_usage.png") %>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cell large-12">
+                    <div class="card_info_usage_echange">
+
+                    <%= form_tag(echange_equipement_send_path(id: @equipment.id), method: "post") do %>
+
+                        <%= label_tag(:name, "Votre nom") %>
+                        <%= text_field_tag :name, nil, {placeholder: "Votre nom", required: true} %>
+
+                        <div class="grid-x grid-margin-x">
+                            <div class="cell large-6">
+                                <%= label_tag(:email, "Votre courriel") %>
+                                <%= email_field_tag :email, nil, {placeholder: "Votre adresse courriel", required: true} %>
+                            </div>
+                            <div class="cell large-6">
+                                <%= label_tag(:phone, "Votre téléphone") %>
+                                <%= telephone_field_tag :phone, nil, {placeholder: "Votre téléphone", required: true} %>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <h4>VOTRE ÉQUIPEMENT</h4>
+                        <div class="grid-x grid-margin-x">
+                            <div class="cell large-4">
+                                    <%= label_tag(:modele_equipement_echange, "Marque") %>
+                                <%= text_field_tag :marque_equipement_echange, nil, {placeholder: "Marque de votre équipement", required: true} %>
+                            </div>
+                            <div class="cell large-4">
+                                <%= label_tag(:modele_equipement_echange, "Modèle") %>
+                                <%= text_field_tag :modele_equipement_echange, nil, {placeholder: "Modèle de votre équipement", required: true} %>
+                            </div>
+                            <div class="cell large-4">
+                                <%= label_tag(:annee_equipement_echange, "Année") %>
+                                <%= text_field_tag :annee_equipement_echange, nil, {placeholder: "Année de votre équipement", required: true} %>
+                            </div>
+                        </div>
+                        <div class="grid-x grid-margin-x">
+                            <div class="cell large-6">
+                                <%= label_tag(:heures_equipement_echange, "Heures d'utilisation") %>
+                                <%= text_field_tag :heures_equipement_echange, nil, {placeholder: "Nombre d'heures d'utilisation", required: true} %>
+                            </div>
+
+                            <div class="cell large-6">
+                                <%= label_tag(:prix_equipement_echange, "Prix souhaité pour votre équipement ($ CAD)") %>
+                                <%= number_field_tag :prix_equipement_echange, nil, {placeholder: "Indiquez le prix pour votre équipement", required: true} %>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="grid-x flex_center">
+                            <div class="cell large-12">
+                                <%= check_box(:tos, :accepted, { :class => 'tos_check', required: true }, "yes", "no") %> &nbsp; J'accepte les conditions ci-après <br>
+                                <quote>
+                                    En cliquant sur j'accepte, vous autorisez l'entreprise LAVOIE Equipement Agricole
+                                    à enregister dans sa base de données les informations envoyées par ce formulaire et
+                                    à communiquer avec vous par la suite pour traiter votre demande.
+                                </quote>
+                            </div>
+                            <div class="cell large-12">
+                                <br>
+                                <%= submit_tag "Envoyer votre demande", class:"button large"%>
+                            </div>
+                        </div>
+
+                    <% end %>
+                </div>
+                </div>
+            </div>
+
+    </div>
+</section>
+
+
+
+<script type="text/javascript">
+$('.owl-carousel').owlCarousel({
+    items:1,
+    lazyLoad:true,
+    loop:false,
+    margin:10,
+    nav: true,
+    dots: false,
+    navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+});
+</script>

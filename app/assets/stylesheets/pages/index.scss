@@ -1,0 +1,119 @@
+
+/* PAGE INDEX
+/* -------------------------------------------------------------------------------------------- */
+
+// Section Hero
+// Section Navigation
+// Section Brands
+// Section Contact
+
+/* -------------------------------------------------------------------------------------------- */
+
+section.hero
+{
+    height: 75vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), image-url("bg_hero_aerial.png");
+
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 100%;
+    h1{
+        color:#ffffff;
+        font-size: 70px;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+section.navigation
+{
+    background: #2d2b2b;
+    background: #060606;
+    color:#fff;
+    padding: 80px;
+    color: #fff;
+    background: #333333;
+    background:#110b0c;
+    background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), image-url('15.jpg') center center no-repeat;
+
+    p {
+        color: #fff;
+    }
+
+    a,a:visited{
+        color: #fff;
+    }
+    a:hover{
+        color: $primary-color;
+    }
+
+    h2{
+        text-transform: uppercase;
+        font-weight: bold;
+        position:relative;
+        overflow:hidden;
+        padding-bottom: 10px;
+        margin-bottom:20px;
+        margin-top: 20px;
+        color:#fff;
+
+        a,a:visited{ justify-content: center;
+            color: #fff;
+        }
+    }
+
+
+    h2:after {
+        content:"";
+        bottom:0%;
+        left:0%;
+        width:15%;
+        margin-top:10px;
+        height:5px;
+        position:absolute;
+        background:$primary-color;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+section.brands
+{
+    background: #ffffff;
+    padding-top:  80px;
+    padding-bottom: 80px;
+
+    .brand_title
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    h3{
+
+        text-align: center;
+        font-size: 40px;
+        color:gray;
+        text-transform: uppercase;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+section.contact
+{
+    background: image-url("bg_footer.png") bottom center;
+    min-height: 700px;
+    text-align: center;
+
+    h3{
+        text-transform: uppercase;
+    }
+}

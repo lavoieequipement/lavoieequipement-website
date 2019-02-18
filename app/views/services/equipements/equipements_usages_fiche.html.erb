@@ -1,0 +1,95 @@
+<section class="content_page content_page_equipement_usage bg_dust">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell large-12">
+                <p>
+                    <%= link_to "<< Retour aux équipements usagés", equipements_usages_url %>
+                </p>
+            </div>
+            <div class="cell large-12 intro_fiche_equipement">
+                <h1><%= @equipment.name %> - Année <%= @equipment.year %></h1>
+
+                <% if !@equipment.price.nil? %>
+                    <h3> <%= number_to_currency(@equipment.price) %> </h3>
+                <% else %>
+                    <h3>Appelez-nous</h3>
+                <% end %>
+
+                <p>
+                    <%= @equipment.description %>
+                </p>
+            </div>
+
+            <div class="cell large-8 photos_equipement_usage">
+                <div class="owl-carousel owl-theme">
+                    <% unless @equipment.photos.empty? %>
+                        <% @equipment.photos.each_with_index do |photo,index| %>
+                            <div class="item">
+                                <% if Pathname.new(Rails.application.routes.url_helpers.rails_blob_url(photo, only_path: true)).exist? %>
+                                    <%= image_tag Rails.application.routes.url_helpers.rails_blob_url(photo, only_path: false) %>
+                                <% else %>
+                                    <%= image_tag("placeholder_photos_equipement_usage.png") %>
+                                <% end %>
+                            </div>
+                        <% end %>
+                    <% else %>
+                        <div class="item">
+                            <% if @equipment.miniature.attached?  && Rails.application.routes.url_helpers.rails_blob_url(@equipment.miniature, only_path: true).nil? %>
+                                <%= image_tag Rails.application.routes.url_helpers.rails_blob_url(@equipment.miniature, only_path: false) %>
+                            <% else %>
+                                <%= image_tag("placeholder_photos_equipement_usage.png") %>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+
+            <div class="cell large-4 info_equipement_usage">
+
+                <h3>Caractéristiques</h3>
+                <p>
+                <ul>
+                    <li><strong>Marque : </strong><%= @equipment.brand.name unless @equipment.brand.nil? %></li>
+                    <li><strong>Modèle : </strong><%= @equipment.brand_model.name unless @equipment.brand_model.nil? %></li>
+                    <li><strong>Année : </strong><%= @equipment.year unless @equipment.year.nil? %></li>
+                    <li><strong>Heures/Séparateur : </strong><%= @equipment.hour %> h / <%= @equipment.separate_hour %> h</li>
+                    <li><strong>Motricité : </strong><%= @equipment.traction_type.name %></li>
+                    <li><strong>Puissance : </strong><%= @equipment.power_type.name %></li>
+                </ul>
+                </p>
+                <p><strong>Equipement d'échange</strong> : accepté <br>
+                <strong>Possibilté de financement</strong> : oui </p>
+                <br>
+                <%= link_to "Contacter un vendeur", contact_url, class:"button large" %><br>
+                <%= link_to "Echanger votre équipement", contact_echange_equipement_url(id: @equipment.id), class:"button secondary " %>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<section class="cta_page">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-y grid-margin-x">
+            <div class="cell large-12">
+
+            <h2>En achetant chez LAVOIE</h2>
+
+        </div>
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript">
+$('.owl-carousel').owlCarousel({
+    items:1,
+    lazyLoad:true,
+    loop:false,
+    margin:10,
+    nav: true,
+    dots: false,
+    navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+});
+</script>

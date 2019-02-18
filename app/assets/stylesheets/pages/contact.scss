@@ -1,0 +1,21 @@
+/* -------------------------------------------------------------------------------------------- */
+/* PAGE CARRIERES
+/* lavoie.ag/fr/carrieres/
+
+// Section intro_contact
+/* -------------------------------------------------------------------------------------------- */
+
+section.intro_contact{
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.5)), image-url("mail_box.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+section.intro_contact_error{
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), image-url("mailbox_error.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}

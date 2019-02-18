@@ -1,0 +1,41 @@
+<section class="content_page content_formulaire">
+    <div class="grid-container">
+
+        <div class="card_formulaire">
+            <h2>Demande d'acquisition d'équipement</h2>
+            <%= form_tag(acquisition_equipement_send_path, method: "post") do %>
+
+                <%= label_tag(:name, "Votre nom") %>
+                <%= text_field_tag :name, nil, {placeholder: "Votre nom", required: true} %>
+
+                <div class="grid-x grid-margin-x">
+                    <div class="cell large-6">
+                        <%= label_tag(:email, "Votre courriel") %>
+                        <%= email_field_tag :email, nil, {placeholder: "Votre adresse courriel", required: true} %>
+                    </div>
+                    <div class="cell large-6">
+                        <%= label_tag(:phone, "Votre téléphone") %>
+                        <%= telephone_field_tag :phone, nil, {placeholder: "Votre téléphone", required: true} %>
+                    </div>
+                </div>
+
+                <%= label_tag(:message, "Forfait d'acquisition") %>
+                <%=
+                select_tag(:forfait_acquisition, options_for_select([
+                    ['Acquisition à la carte'],
+                    ['Acquisition clé en main'],
+                    ]), :include_blank => '-- Choix du forfait --', required: true)
+                %>
+
+                <%= label_tag(:email, "Type d'équipement") %>
+                <%= select(nil,:type_equipement, EquipmentType.all.collect {|p| [ p.name, p.name ] }, { :include_blank => "-- Choisir un type d'équipement --"}, required: true) %>
+
+                <%= label_tag(:message, "Votre recherche") %>
+                <%= text_area_tag :message,nil, {placeholder: "Précisez votre recherche",rows: 5, cols: 25, required: true} %>
+
+                <%= submit_tag "Envoyer votre message", class:"button large"%>
+            <% end %>
+        </div>
+
+    </div>
+</section>

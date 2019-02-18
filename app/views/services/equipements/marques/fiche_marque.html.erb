@@ -1,0 +1,17 @@
+<%= render partial: 'web/services/equipements/marques/marque_'+ @marque %>
+
+<section class="cta_page footer_financement_equipement">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="cell large-12">
+                <h3>Financez votre équipement <%= @marque %> sur trois ans</h3>
+                <p>
+                    Nous proposons des plusieurs types de financement sur du long terme.
+                </p>
+                <br>
+                <p>
+                    <%= link_to "Nos offres de financement", financement_url, class: "button large" %>
+                </p>
+        </div>
+    </div>
+</section>

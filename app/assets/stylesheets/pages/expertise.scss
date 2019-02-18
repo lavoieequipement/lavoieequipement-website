@@ -1,0 +1,42 @@
+.optimisation_agricole
+{
+    .card{
+        padding:30px;
+    }
+}
+
+section.intro_ajustement_champs
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.17)), image-url("header_ajustement_champs.jpg");
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+.accordion-item
+{
+    a{
+        font-size: 20px;
+        padding:20px;
+        color:#888888;
+    }
+}
+.accordion-item.is-active
+{
+    a{
+        color:black;
+        font-weight: bold;
+    }
+}
+
+section.footer_cta_ajustement_equipement{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(11, 23, 27, .8),rgba(255, 255, 255, 0)), image-url("cta_ajustement_equipement.jpg");
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    h3{
+        text-transform: uppercase;
+    }
+    color:#fff;
+    p{ color:#fff; }
+}

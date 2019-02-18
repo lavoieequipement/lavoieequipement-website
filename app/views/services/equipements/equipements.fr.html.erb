@@ -1,0 +1,32 @@
+<section class="intro_page header_page intro_equipement">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h1>Equipements agricole</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="cap_white"></div>
+
+<section class="content_page">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x spacer_bottom">
+            <div class="cell large-offset-2 large-4 center">
+                <h2>Equipements neufs</h2>
+                <br>
+                <%= link_to  equipements_neufs_url do  %>
+                    <%= image_tag('equipement_neufs.png') %>
+                <% end %>
+            </div>
+            <div class="cell large-4 center">
+                <h2>Equipements usagés</h2>
+                <br>
+                <%= link_to  equipements_usages_url do  %>
+                    <%= image_tag('equipement_usages.png') %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>

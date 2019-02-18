@@ -1,0 +1,123 @@
+<section class="intro_page intro_commande_libre">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h1>Commande libre</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="cap_black"></div>
+<section class="content_page_dark ">
+    <div class="grid-container">
+        <h2>Catalogues constructeurs</h2>
+        <p>Visitez les sites des constructeurs pour obtenir les références de pièces puis remplissez le formulaire de commande.</p>
+        <br>
+        <div class="grid-x grid-margin-x">
+            <div class="cell large-8">
+                <select class="liste_marques" id="liste_marques" name="liste_marques">
+                    <option disabled selected>Choisir une marque</option>
+                    <% @marques.each do |marque,website| %>
+                        <option value="<%= website %>"><%= marque %></option>
+                    <% end %>
+                </select>
+            </div>
+            <div class="cell large-4">
+                <a id="go_website" class="button primary"><strong>Voir le site du constructeur</strong>    </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content_page bg_dust">
+    <div class="grid-container">
+        <div class="grid-x">
+
+        <div class="cell large-12">
+            <h2>Formulaire de commande libre</h2>
+            <p>
+                Indiquez les références des constructeurs en précisant la quantité puis envoyer le formulaire à notre département
+                des pièces.
+            </p>
+        </div>
+    </div>
+
+
+
+        <br>
+
+        <%= form_for @parts_order,url: pieces_commande_path, method: "post" do |f| %>
+        <div class="card_commande_libre">
+
+            <h3>Vos informations</h3>
+
+            <div class="grid-x grid-margin-x">
+                <div class="cell large-6">
+                    <%= label_tag(:name, "Votre nom") %>
+                    <%= f.text_field :name, placeholder: "Votre nom", required: true %>
+                </div>
+                <div class="cell large-6">
+                <div class="grid-x grid-margin-x">
+                    <div class="cell large-6">
+                        <%= label_tag(:email, "Votre adresse courriel") %>
+                        <%= f.text_field :email, placeholder: "Votre adresse courriel", required: true %>
+                    </div>
+                    <div class="cell large-6">
+                        <%= label_tag(:phone, "Votre numéro de téléphone") %>
+                        <%= f.phone_field :phone, placeholder: "418-123-4567", required: true %>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+            <div class="card_commande_libre">
+                <h3>Liste des pièces</h3>
+
+                <%= f.fields_for :parts_order_items do |parts_order_item| %>
+                    <%= render 'web/services/pieces/ligne_commande_libre', f: parts_order_item  %>
+                <% end %>
+
+                <%= f.fields_for :parts_order_items do |parts_order_item| %>
+                    <%= render 'web/services/pieces/ligne_commande_libre', f: parts_order_item  %>
+                <% end %>
+
+                <%= f.fields_for :parts_order_items do |parts_order_item| %>
+                    <%= render 'web/services/pieces/ligne_commande_libre', f: parts_order_item  %>
+                <% end %>
+                <strong><%=  link_to_add_association ' + Ajouter une ligne', f, :parts_order_items,partial: "web/services/pieces/ligne_commande_libre" ,class:"button secondary" %></strong>
+            </div>
+                <br>
+                <p>
+                    <%= submit_tag "Passez commande", class:"button large button_commande_libre" %>
+                </p>
+
+        <% end %>
+
+</section>
+
+<section class="cta_page footer_cta_recherche_approfondie">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell large-12">
+                <h2>Vous n'avez pas trouvé vos pièces?</h2>
+                <p>Notre équipe de spécialiste aux pièces se charge de la recherche à votre place! Obtenez votre réponse en 48h.</p>
+                <%= link_to "Service de recherche", pieces_recherche_approfondie_url, class:"button large" %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+
+
+    $("#go_website").on("click",function(){
+        if($('#liste_marques').val() == null)
+        {
+            alert('Merci de choisir un constructeur');
+        } else {
+            window.open($('#liste_marques').val(), '_blank');
+        }
+    });
+
+</script>

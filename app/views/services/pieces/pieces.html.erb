@@ -1,0 +1,33 @@
+<section class="intro_page header_page intro_pieces">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h1>Pièces et accessoires</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="cap_white"></div>
+
+<section class="content_page">
+    <div class="grid-container">
+
+        <div class="grid-x grid-margin-x spacer_bottom">
+            <div class="cell large-offset-2 large-4 center">
+                <h2>Commande libre</h2>
+                <br>
+                <%= link_to  pieces_commande_libre_url do  %>
+                    <%= image_tag('categorie_commande_libre.png') %>
+                <% end %>
+            </div>
+            <div class="cell large-4 center">
+                <h2>Recherche appronfondie</h2>
+                <br>
+                <%= link_to  pieces_recherche_approfondie_url do  %>
+                    <%= image_tag('categorie_recherche_approfondie.png') %>
+                <% end %>
+            </div>
+        </div>
+
+    </div>
+</section>

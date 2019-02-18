@@ -1,0 +1,106 @@
+<section class="intro_page intro_equipements_usages">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h1>Equipements usagés</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="cap_black"></div>
+<section class="content_page_dark">
+    <div class="grid-container ">
+        <h2>Rechercher un équipement</h2>
+        <p>Nous disposons de beaucoup de modèles usagés qui peuvent répondre à vos besoins.
+             </p>
+             <br>
+
+             <%= form_tag equipements_usages_path, method: :get do %>
+             <ul class="menu">
+                 <li>
+                     <select class="liste_marques" id="brand" name="brand">
+                         <option value="0">Toutes les marques</option>
+                         <% Brand.all.each do |marque| %>
+                            <% if params[:brand] && params[:brand].to_i == marque.id%>
+                                <option value="<%= marque.id %>" selected><%= marque.name %></option>
+                            <% else %>
+                                <option value="<%= marque.id %>"><%= marque.name %></option>
+                            <% end %>
+                         <% end %>
+                     </select>
+
+
+                 </li>
+                 <li><%= text_field_tag :search, params[:search], style:"width:500px",placeholder:"Rechercher un modèle ou une année..." %></li>               <li>
+                 <%= button_tag "Search", name: nil, class: "button primary" do %>
+                     <i class="fa fa-search"></i> &nbsp; Rechercher
+                 <% end %>
+             </li>
+           </ul>
+         <% end %>
+    </div>
+</section>
+
+<section class="content_page">
+    <div class="grid-container">
+
+
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <% unless @equipments.nil? %>
+                <% @equipments.each do |equipment| %>
+                        <div class="cell large-4">
+                            <div class="list_item_equipement">
+                                <div class="list_item_equipement_image">
+                                    <%= link_to equipements_usages_fiche_url(id: equipment.id ,marque:equipment.name.parameterize, annee:equipment.year) do %>
+                                        <% if equipment.miniature.attached?  && Pathname.new(Rails.application.routes.url_helpers.rails_blob_url(equipment.miniature, only_path: true)).exist? %>
+                                            <%= image_tag Rails.application.routes.url_helpers.rails_blob_url(equipment.miniature, only_path: false) %>
+                                        <% else %>
+                                            <%= image_tag("placeholder_miniature_equipement_usage.png") %>
+                                        <% end %>
+                                    <% end %>
+                                </div>
+                                <div class="list_item_equipement_info">
+                                <h2><%= equipment.brand.name %> - <%= equipment.brand_model.name %> </h2>
+                                        <strong>Année : </strong><%= equipment.year %>
+                                        <br>
+                                        <strong>heures/séparateur : </strong> <%= equipment.hour %>h / <%= equipment.separate_hour %>h
+                                        <hr>
+                                <% if !equipment.price.nil? %>
+                                    <h3> <i class="fa fa-dollar-sign"></i> &nbsp; <%= number_to_currency(equipment.price) %></h3>
+                                <% else %>
+                                    <h3>Prix : Appelez-nous</h3>
+                                <% end %>
+                            </div>
+                            </div>
+                        </div>
+                <% end %>
+
+
+                <% if @search%>
+                    <% if @equipments.empty?%>
+                        <p>Votre recherche n'a donné aucun résultat...</p>
+                    <% end %>
+                <% end %>
+
+            <% else %>
+                <p>Pas d'équipements usagés pour le moment...</p>
+            <% end %>
+        </div>
+
+    </div>
+</section>
+
+<section class="cta_page footer_cta_evaluation_equipement">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="cell large-12">
+                <h3>Nous reprenons vos équipements usagés!</h3>
+                <p>Selon l'état, nous tenons compte de votre équipement lors d'un achat d'un équipement usagé. Demandez une évaluation!</p>
+                <p>
+                    <br>
+                    <%= link_to "Faire évaluer mon équipement", expertise_evaluation_equipement_url,class: "button large" %>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

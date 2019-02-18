@@ -1,0 +1,71 @@
+<section class="intro_page">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h1>Confirmation!</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content_page">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h2>Votre commande a bien été enregistrée.</h2>
+                <p>Merci d'avoir commandé sur notre site web. Nous allons traiter votre commande dans les plus bref délais.</p>
+
+                <h3>Résumé de votre commande</h3>
+                <p><strong>Vos informations :</strong>
+
+                <ul>
+                    <li><strong>Votre Nom</strong> :  <%= @parts_order.name %></li>
+                    <li><strong>Votre courriel</strong> :  <%= @parts_order.email %></li>
+                    <li><strong>Votre téléphone</strong> :  <%= @parts_order.phone %></li>
+                </ul>
+
+                <br>
+                <p><strong>Votre commande :</strong>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Marque</th>
+                            <th>Référence</th>
+                            <th>Quantité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @parts_order.parts_order_items.each do |item| %>
+                        <tr>
+                            <td><%= item.marque %></td>
+                            <td><%= item.reference %></td>
+                            <td><%= item.quantite %></td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <p>
+                    <h4>Notre équipe vous contactera afin de finaliser la commande.</h4>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta_page">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h2>Vous avez des questions concernant votre commande? </h2>
+                <p>Contacter le département des pièces <strong>au 418-247-5955</strong> ou écrivez à <strong>pieces@lavoie.ag</strong> afin d'obtenir plus d'informations.</p>
+
+                <br>
+                <p><%= link_to "Retournez à l'accueil", root_url, class:"button large"%></p>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,121 @@
+/* -------------------------------------------------------------------------------------------- */
+
+/* PAGE EQUIPEMENTS
+/* lavoie.ag/fr/transport/
+
+// Section introtra
+// Section hero_transport
+// Section services_transport
+// Section Content
+// Section Cta
+
+/* -------------------------------------------------------------------------------------------- */
+
+
+section.intro_transport{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.5)), image-url("transport_lavoie.png");
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+}
+
+
+section.intro_transport_machinerie{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.17)), image-url("section_transport_machinerie.png");
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+section.intro_transport_international{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.17)), image-url("section_transport_international.png");
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+section.intro_transport_horsnormes{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.17)), image-url("section_transport_horsnormes.png");
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+
+section.hero_transport
+{
+    background-color: #fff;
+    min-height: 700px;
+    background-size: cover;
+
+    .texte_hero_transport
+    {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+        p{
+            text-align: justify;
+        }
+
+        .points_fort_transport li {
+            font-weight: bold;
+        }
+    }
+}
+
+.types_transport
+{
+    p{
+        color:#8c8b8b;
+    }
+
+    .follow_up
+    {
+        margin:20px 0;
+        p{
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+            color: #3d3d3d;
+        }
+    }
+    h3{
+        margin-top: 15px;
+        text-align: center;
+        padding: 15px;
+    }
+}
+section.services_transport
+{
+
+    h3{
+        text-align: center;
+        padding-bottom: 14px;
+        text-transform: uppercase;
+        color: #d64343;
+    }
+    p{
+        text-align: justify;
+    }
+}
+
+section.cta_estimation_transport
+{
+    background-color: #fff;
+    background: image-url("footer_transport_couleur.png") bottom center;
+    min-height: 700px;
+    background-size: cover;
+    padding-top: 30px;
+    padding-bottom: 120px;
+
+    h3{
+        padding-bottom: 14px;
+        text-transform: uppercase;
+        color: #d64343;
+    }
+
+    span.numero_telephone
+    {
+        color:#000;
+        font-size: 18px;
+    }
+}

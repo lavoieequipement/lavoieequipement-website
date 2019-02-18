@@ -1,0 +1,83 @@
+section.intro_services{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.5)), image-url("header_services.jpg");
+    background-size: cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+
+    filter: grayscale(100%);
+    
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 80px;
+    }
+}
+
+
+.bloc_service
+{
+    background: #2f2f2f;
+    color:#fff;
+    padding: 80px;
+    h2{
+        font-size: 35px;
+        font-weight: bolder;
+    }
+    a{
+        color:#FFF;
+        margin-left: 35px;
+        font-size: 25px;
+        &:hover{
+            color:$primary-color;
+        }
+    }
+}
+@media screen and (max-width: 675px) {
+    .bloc_service
+    {
+        padding: 40px;
+        h2{
+            font-size: 25px;
+            font-weight: bolder;
+        }
+        a{
+            color:#FFF;
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: 0;
+            &:hover{
+                color:$primary-color;
+            }
+        }
+    }
+}
+
+.bloc_service_expertise{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60),rgba(0, 0, 0, 0.60)), image-url("departement_mecanique.png");
+    background-size: cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+.bloc_service_equipements{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60),rgba(0, 0, 0, 0.60)), image-url("header_equipements.png");
+    background-size: cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+.bloc_service_pieces{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60),rgba(0, 0, 0, 0.60)), image-url("header_pieces.png");
+    background-size: cover;
+    background-position:top center;
+    background-repeat: no-repeat;
+}
+.bloc_service_transport{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60),rgba(0, 0, 0, 0.60)), image-url("transport_lavoie.png");
+    background-size: cover;
+    background-position:top center;
+    background-repeat: no-repeat;
+}

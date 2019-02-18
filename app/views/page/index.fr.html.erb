@@ -1,0 +1,125 @@
+<section class="hero">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h1>Lavoie Equipement,<br> votre partenaire agricole</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="cap_black"></div>
+
+<section class="navigation">
+    <div class="grid-container">
+
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="cell large-auto medium-6 small-12">
+                <h2><%= link_to "Expertise", expertise_url %></h2>
+                <ul>
+                    <li><%= link_to "Acquisition d'équipements", expertise_acquisition_equipement_url %></li>
+                    <li><%= link_to "Inspection technique", expertise_inspection_technique_url %></li>
+                    <li><%= link_to "Ajustement au champ", expertise_ajustement_equipement_url %></li>
+                    <li><%= link_to "Évaluation d'équipement", expertise_evaluation_equipement_url%></li>
+                </ul>
+            </div>
+
+        <div class="cell large-auto medium-6 small-12">
+            <h2><%= link_to "équipements", equipements_url %></h2>
+            <ul>
+                <li><%= link_to "Équipements neufs", equipements_neufs_url %></li>
+                <li><%= link_to "Équipements usagés", equipements_usages_url %></li>
+            </ul>
+        </div>
+        <div class="cell large-auto medium-6 small-12">
+            <h2><%= link_to "pièces", pieces_url %></h2>
+            <ul>
+                <li><%= link_to "Catalogues constructeurs", pieces_commande_libre_url %></li>
+                <li><%= link_to "Recherche approfondie", pieces_recherche_approfondie_url %></li>
+            </ul>
+        </div>
+
+        <div class="cell large-auto medium-6 small-12">
+            <h2><%= link_to "transport", transport_url %></h2>
+            <ul>
+                <li><%= link_to "Transport de machinerie", transport_transport_machinerie_url %></li>
+                <li><%= link_to "Transport  international", transport_transport_international_url %></li>
+                <li><%= link_to "Transport Hors-normes", transport_transport_hors_normes_url %></li>
+            </ul>
+        </div>
+        </div>
+
+      </div>
+</section>
+<div class="cap_white"></div>
+
+<section class="brands">
+    <div class="grid-container">
+            <div class="grid-x grid-margin-x grid-margin-y">
+
+              <div class="cell large-5 medium-12 small-12 brand_title">
+                  <h3><strong>Nous distribuons toutes les marques d'équipements</strong> </h3>
+              </div>
+
+              <div class="cell auto large-offset-1">
+                  <div class="grid-x grid-margin-x medium-up-3">
+
+                        <div class="cell">
+                            <%= link_to equipements_neufs_marque_url(marque: "macdon") do %>
+                            <%= image_tag("logo/logo_macdon.png") %>
+                            <% end %>
+                        </div>
+                      <div class="cell">
+                          <%= link_to equipements_neufs_marque_url(marque: "antonio-carraro") do %>
+                         <%= image_tag("logo/logo_antonio_carraro.png") %>
+                         <% end %>
+                      </div>
+                      <div class="cell">
+                          <%= link_to equipements_neufs_marque_url(marque: "harvestmore") do %>
+                            <%= image_tag("logo/logo_harvestmore.png") %>
+                          <% end %>
+                      </div>
+                      <div class="cell">
+                          <%= link_to equipements_neufs_marque_url(marque: "john-deere") do %>
+                          <%= image_tag("logo/logo_john_deere.png") %>
+                          <% end %>
+                      </div>
+                      <div class="cell">
+                          <%= link_to equipements_neufs_marque_url(marque: "new-holland") do %>
+                          <%= image_tag("logo/logo_new_holland.png") %>
+                          <% end %>
+                      </div>
+                      <div class="cell flex_center">
+                          <div>
+                          <p class="center">
+                              <strong>
+                                  <%= link_to "Voir toutes les marques", equipements_neufs_marques_url, class:"center" %>
+                              </strong>
+                          </p>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+</section>
+
+<section class="contact">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="cell large-12">
+                <h2 class="section">30 ans d'expertise à votre service</h2>
+                <p>
+                    Depuis plus de 30 ans, Lavoie équipement a acquis les connaissances et l'expérience nécessaire pour vous donner le meilleur service possible.
+                    <br>
+                    Que ce soit pour des conseils, de l'équipement agricole, des pièces ou du transport, nous répondons à vos questions! <strong>Appelez-nous!</strong>
+                </p>
+                <p>
+                    <br>
+                    <a href="tel:4812475955" class="button large"><strong>418-247-5955</strong></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

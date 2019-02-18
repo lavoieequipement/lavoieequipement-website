@@ -1,0 +1,58 @@
+
+/* PAGE Financement
+/* -------------------------------------------------------------------------------------------- */
+
+// Section intro_financement
+// Section Navigation
+// Section expansion_agricole
+// Section Contact
+
+/* -------------------------------------------------------------------------------------------- */
+section.intro_financement{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.5)), image-url("header_financement.jpg");
+    //background: #000;
+    //background: #823838;
+    background-size: cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+}
+
+section.offre_financement{
+        background-color:#ffffff;
+        h1{    text-transform: uppercase;
+        font-size: 38px;
+        text-align: justify;
+        color: #7d503e;
+        }
+}
+
+.texte_activites{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    p{
+        text-align: justify;
+    }
+}
+
+section.footer_financement{
+    //background: #d3c9c0 image-url("footer_financement.png");
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    padding-bottom: 0;
+
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    p{
+        color:#000000;
+    }
+
+
+}

@@ -1,0 +1,63 @@
+<section class="cta_page cta_estimation_transport">
+    <div class="grid-container">
+
+        <div class="grid-x grid-margin-x">
+            <div class="cell">
+                <h2 class="section">Votre estimation de transport en 24h</h2>
+            </div>
+        </div>
+
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="cell large-4">
+                <h3 class="title">Réponse rapide garantie</h3>
+                <p>
+                    Vous souhaitez importer ou exporter un
+                    équipement agricole? Faites le en toute
+                    sécurité et au meilleur prix!
+                    Envoyez votre demande à l'aide du formulaire.
+                    <br>
+                    <br>
+
+                    <strong>
+                        Notre département Transport vous contactera
+                        pour vous proposer une estimation.
+                    </strong>
+
+                </p>
+
+            </div>
+            <div class="cell large-6 large-offset-2 formulaire_estimation_transport">
+                <h3>Demande de soumission en ligne</h3>
+
+                <%= form_tag(estimation_transport_send_path, method: "post") do %>
+                    <%= label_tag(:phone, "Votre téléphone") %>
+                    <%= telephone_field_tag :phone, nil, {placeholder: "418-123-4567", required: true} %>
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell large-6">
+                            <%= label_tag(:location_start, "Adresse de départ :") %>
+                            <%= text_field_tag :location_start, nil, {placeholder: "Point de départ", required: true,id: :autocomplete_start_address} %>
+                        </div>
+                        <div class="cell large-6">
+                            <%= label_tag(:location_end, "Adresse d'arrivée :") %>
+                            <%= text_field_tag :location_end, nil, {placeholder: "Point d'arrivée", required: true,id: :autocomplete_end_address} %>
+                        </div>
+                    </div>
+                    <%=
+                    select_tag(:type_chargement, options_for_select([
+                        ['Equipement agricole'],
+                        ['Equipement industriel'],
+                        ['Autre']
+                      ]), :include_blank => '-- Quel type de chargement? --', required: true)
+                    %>
+                    <%=
+                    select_tag(:hors_normes, options_for_select([
+                        ['Oui'],
+                        ['Non'],
+                      ]), :include_blank => '-- Poids/dimensions hors-normes? --',required: true)
+                    %>
+                    <%= submit_tag "Faire estimer votre transport", class:"button large"%>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>

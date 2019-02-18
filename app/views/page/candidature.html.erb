@@ -1,0 +1,49 @@
+<section class="intro_page">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h1>Candidature</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="cap_white">
+<section class="content_page">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+
+                <h3>Proposer votre candidature</h3>
+                <%= form_tag(candidature_send_path, method: "post",multipart: true) do %>
+
+                    <%= label_tag(:name, "Votre nom") %>
+                    <%= text_field_tag :name, nil, {placeholder: "Votre nom", required: true} %>
+
+                    <%= label_tag(:email, "Votre courriel") %>
+                    <%= email_field_tag :email, nil, {placeholder: "Votre adresse courriel", required: true} %>
+                    <%=
+                    select_tag(:poste, options_for_select([
+                        ['Mécanicien agricole'],
+                        ['Commis au pièces'],
+                        ['Contrôleur(se) financier']
+                      ]), :include_blank => '-- Nom du poste --', required: true)
+                    %>
+                    <%= label_tag(:cv, "Curriculum Vitae") %>
+                    <%= file_field_tag 'cv_candidature', required: true%>
+
+                    <%= label_tag(:cv, "Lettre de présentation") %>
+                    <%= file_field_tag 'lettre_candidature', required: true %>
+
+                    <%= submit_tag "Envoyer votre message", class:"button large"%>
+
+                <% end %>
+
+                <br>
+                <p class="callout primary">
+                    <strong>Seules les candidatures retenues seront recontactées pour passer un entretien</strong>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>

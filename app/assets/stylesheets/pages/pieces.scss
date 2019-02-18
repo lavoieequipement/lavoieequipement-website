@@ -1,0 +1,73 @@
+
+/* -------------------------------------------------------------------------------------------- */
+
+/* PAGE EQUIPEMENTS
+/* lavoie.ag/fr/transport/
+
+// Section introtra
+// Section hero_transport
+// Section services_transport
+// Section Content
+// Section Cta
+
+/* -------------------------------------------------------------------------------------------- */
+
+
+section.intro_pieces{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.17)), image-url("header_pieces.png");
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+}
+
+section.intro_commande_libre{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.17)), image-url("header_commande_libre.jpg");
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+section.intro_recherche_approfondie{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.17)), image-url("bg_parts.jpg");
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+section.footer_cta_recherche_approfondie{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(11, 23, 27, .8),rgba(255, 255, 255, 0)), image-url("bg_parts.jpg");
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+
+    color:#fff;
+    p{ color:#fff; }
+}
+
+.card_commande_libre
+{
+    background: #FFF;
+    padding: 40px;
+    border: 1px solid #eee;
+    border-top: 5px solid $primary-color;
+    margin-top: 15px;
+}
+
+.remove_ligne_commande_libre{
+    background-color: transparent;
+    color: #717171;
+    border: 2px solid #717171;
+    margin-top: 38px;
+    margin-bottom: 0;
+    &:hover{
+        background-color: transparent;
+        color: #000;
+        border: 2px solid #000;
+    }
+}
+
+.button_commande_libre{
+    background: #232323;
+    &:hover{
+        background: #000;
+    }
+}

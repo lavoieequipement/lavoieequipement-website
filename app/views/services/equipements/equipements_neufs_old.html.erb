@@ -1,0 +1,215 @@
+<section class="intro_page header_page intro_equipement">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h1>Equipements neufs</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="cap_white"></div>
+
+<section class="content_page center">
+
+    <h3>Par marque</h3>
+    <br>
+    <div class="grid-container">
+            <div class="grid-x grid-margin-x grid-margin-y small-up-2 medium-up-6 ">
+
+
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"macdon") do %>
+                <%= image_tag("logo/logo_macdon.png") %>
+                <% end %>
+            </div>
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"antonio-carraro") do %>
+             <%= image_tag("logo/logo_antonio_carraro.png") %>
+             <% end %>
+            </div>
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"grecav") do %>
+                    <%= image_tag("logo/logo_grecav.png") %>
+                <% end %>
+            </div>
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"harvestmore") do %>
+                 <%= image_tag("logo/logo_harvestmore.png") %>
+                <% end %>
+            </div>
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"horst") do %>
+                    <%= image_tag("logo/logo_horst.png") %>
+                <% end %>
+            </div>
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"mudhog") do %>
+                 <%= image_tag("logo/logo_mudhog.png") %>
+                 <% end %>
+            </div>
+        </div>
+
+    <p><br><strong><%= link_to "Voir toutes les marques",equipements_neufs_marques_url %></strong></p>
+    </div>
+</section>
+
+<section class="content_page_light center">
+    <div class="grid-container">
+    <h3>Par type d'équipement</h3>
+    <div class="grid-container fluid">
+        <div class="grid-x grid-margin-x">
+            <div class="cell auto">
+               <br>
+               <%= link_to equipements_neufs_type_url(type:"moissonneuse-batteuse") do %>
+                    <%= image_tag  "http://placehold.it/250" %>
+                    <br>
+                    <br>
+                    <h4>Moissonneuse-Batteuse</h4>
+                <% end %>
+            </div>
+           <div class="cell auto">
+               <br>
+               <%= link_to equipements_neufs_type_url(type:"andaineuse-automotrice") do %>
+                <%= image_tag  "http://placehold.it/250" %>
+                <br>
+                <br>
+                <h4>Andaineuse automotrice</h4>
+                <% end %>
+            </div>
+           <div class="cell auto">
+               <br>
+               <%= link_to equipements_neufs_type_url(type:"faucheuse") do %>
+                <%= image_tag  "http://placehold.it/250" %>
+                <br>
+                <br>
+                <h4>Faucheuse</h4>
+                <% end %>
+            </div>
+           <div class="cell auto">
+               <br>
+               <%= link_to equipements_neufs_type_url(type:"tracteur") do %>
+                <%= image_tag  "http://placehold.it/250" %>
+                <br>
+                <br>
+                <h4>Tracteur</h4>
+                <% end %>
+            </div>
+           <div class="cell auto">
+               <br>
+               <%= link_to equipements_neufs_type_url(type:"tables") do %>
+                <%= image_tag  "http://placehold.it/250" %>
+                <br>
+                <br>
+                <h4>Tables</h4>
+                <% end %>
+            </div>
+           <div class="cell auto">
+               <br>
+               <%= link_to equipements_neufs_type_url(type:"nez-a-mais") do %>
+                <%= image_tag  "http://placehold.it/250" %>
+                <br>
+                <br>
+                <h4>Nez à maïs</h4>
+                <% end %>
+            </div>
+           <div class="cell auto">
+               <br>
+               <%= link_to equipements_neufs_type_url(type:"autre") do %>
+                <%= image_tag  "http://placehold.it/250" %>
+                <br>
+                <br>
+                <h4>Autre</h4>
+                <% end %>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="content_page content_type_culture center">
+
+    <h3>Par type de culture</h3>
+    <br>
+    <div class="grid-container">
+        <div class="grid-x medium-up-3">
+           <div class="cell">
+                <%= link_to equipements_neufs_culture_url(culture: "ble") do %>
+                <div class="vignette_culture">
+                    <%= image_tag("vignette_ble.png", class: "image_culture") %>
+                        <div class="overlay">
+                            <div class="text">Blé</div>
+                        </div>
+                </div>
+                <% end %>
+            </div>
+           <div class="cell">
+                <%= link_to equipements_neufs_culture_url(culture: "mais") do %>
+                <div class="vignette_culture">
+                    <%= image_tag("vignette_mais.png", class: "image_culture") %>
+                        <div class="overlay">
+                            <div class="text">Maïs</div>
+                        </div>
+                </div>
+                <% end %>
+            </div>
+           <div class="cell">
+                <%= link_to equipements_neufs_culture_url(culture: "soya") do %>
+                <div class="vignette_culture">
+                    <%= image_tag("vignette_soya.png", class: "image_culture") %>
+                        <div class="overlay">
+                            <div class="text">Soya</div>
+                        </div>
+                </div>
+                <% end %>
+            </div>
+           <div class="cell">
+                <%= link_to equipements_neufs_culture_url(culture: "chanvre") do %>
+                <div class="vignette_culture">
+                    <%= image_tag("vignette_chanvre.png", class: "image_culture") %>
+                        <div class="overlay">
+                            <div class="text">Chanvre</div>
+                        </div>
+                </div>
+                <% end %>
+            </div>
+           <div class="cell">
+                <%= link_to equipements_neufs_culture_url(culture: "orge") do %>
+                <div class="vignette_culture">
+                    <%= image_tag("vignette_orge.png", class: "image_culture") %>
+                        <div class="overlay">
+                            <div class="text">Orge</div>
+                        </div>
+                </div>
+                <% end %>
+            </div>
+           <div class="cell">
+                <%= link_to equipements_neufs_culture_url(culture: "avoine") do %>
+                <div class="vignette_culture">
+                    <%= image_tag("vignette_avoine.png", class: "image_culture") %>
+                        <div class="overlay">
+                            <div class="text">Avoine</div>
+                        </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="cta_page">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="cell large-12">
+                <h3>Toutes les marques n'auront pas la même efficacité!</h3>
+                <p>Optimisez votre récolte avec les équipements adaptés.</p>
+                <p>
+                    <br>
+                    <a href="#" class="button large ">Demander une expertise</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

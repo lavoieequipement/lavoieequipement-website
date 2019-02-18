@@ -1,0 +1,76 @@
+<section class="intro_page intro_culture_soya">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h1 class="header_culture">Équipement de récolte du Soya</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="cap_white"></div>
+<section class="content_page">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h2>Culture du Soya</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content_page">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h2>Les marques recommandées</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod  ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proidentm.</p>
+            </div>
+        </div>
+        <div class="grid-x grid-margin-x grid-margin-y medium-up-6">
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"macdon") do %>
+                    <%= image_tag 'logo/logo_macdon.png' %>
+                <% end %>
+            </div>
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"antonio-carraro") do %>
+                    <%= image_tag 'logo/logo_antonio_carraro.png' %>
+                <% end %>
+            </div>
+            <div class="cell">
+                 <%= link_to equipements_neufs_marque_url(marque:"harvestmore") do %>
+                <%= image_tag 'logo/logo_harvestmore.png' %>
+                <% end %>
+            </div>
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"grecav") do %>
+                    <%= image_tag 'logo/logo_grecav.png' %>
+                <% end %>
+            </div>
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"horst") do %>
+                    <%= image_tag 'logo/logo_horst.png' %>
+                <% end %>
+            </div>
+            <div class="cell">
+                <%= link_to equipements_neufs_marque_url(marque:"mudhog") do %>
+                    <%= image_tag 'logo/logo_mudhog.png' %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta_page">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <h2>La qualité la récolte varie selon la marque de l'équipement</h2>
+                <p>Nos expert en optimisation agricole peuvent vous conseiller dans le choix de votre équipement.</p>
+                <br>
+                <p>
+                    <%= link_to "Rencontrer un expert",contact_url, class:"button large" %>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

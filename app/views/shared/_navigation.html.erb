@@ -1,0 +1,53 @@
+<header>
+    <div class="grid-container container_navigation">
+        <div class="mobile-logo show-for-small-only">
+            <div class="grid-x">
+                <div class="cell">
+
+                    <%= link_to root_path,class:"logo logo_nav" do %>
+                        LAVOIE EQUIPEMENT
+                    <% end %>
+                </div>
+                <div class="cell">
+                    <span class="phone">418-247-5955</span>
+                </div>
+            </div>
+        </div>
+        <div class="title-bar" data-responsive-toggle="menu-principal" data-hide-for="medium">
+             <button class="menu-icon" type="button" data-toggle></button>
+            <div class="title-bar-title"> &nbsp; Menu principal</div>
+            <span class="langue_switcher">
+                <%= link_to  "Français", request.domain ? request.fullpath.sub!('en','fr') : request.fullpath.sub!('/en/','/fr/') %> | <%= link_to "English" , request.domain ? request.fullpath.sub!('fr','en') : request.fullpath.sub!('/fr/','/en/') %>
+            </span>
+        </div>
+        <div class="top-bar" id="menu-principal">
+            <div class="top-bar-title">
+                <%= link_to root_path,class:"logo hide-for-small-only logo_nav" do %>
+                    LAVOIE
+                <% end %>
+            </div>
+            <div class="top-bar-right">
+                <ul class="vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-back-button="<li class='js-drilldown-back'><a>Retour</a></li>" >
+                  <li><%= link_to "L'entreprise", entreprise_url() %></li>
+                  <li class="hide-for-small-only"><%= link_to "Nos services", services_url() %></li>
+                  <li class="show-for-small-only"><%= link_to "Nos services", services_url() %>
+                      <ul class="menu vertical hide-for-large">
+                        <li><strong><%= link_to  "Expertise-Conseil",expertise_url %></strong>    </li>
+                        <li><strong><%= link_to  "Equipements Agricole",equipements_url %></strong></li>
+                        <li><strong><%= link_to  "Pièces et accessoires",pieces_url %></strong>    </li>
+                        <li><strong><%= link_to  "Transport",transport_url %></strong></li>
+                      </ul></li>
+                  <li><%= link_to "Financement", financement_url() %></li>
+                  <li><%= link_to "Contact", contact_url() %></li>
+                    <li class="hide-for-small-only"><a href="#"><%= image_tag("earth.svg", width:16) %></a>
+                        <ul class="menu vertical">
+                          <li><%= link_to  "Français", request.domain ? request.fullpath.sub!('en','fr') : request.fullpath.sub!('/en/','/fr/') %></li>
+                          <li><%= link_to "English" , request.domain ?  request.fullpath.sub!('fr','en') : request.fullpath.sub!('/fr/','/en/') %></li>
+                        </ul>
+                    </li>
+                </ul>
+              </div>
+
+        </div>
+    </div>
+</header>
