@@ -1,0 +1,14 @@
+Contact site web LAVOIE - Acquisition d'équipement
+===============================================
+
+Une personne (  <%=@message[:name] %> -  <%=@message[:email] %>  - <%= @message[:phone] %> )
+a effectué une demande de contact pour faire l'acquisition d'un équipement depuis le site web.
+
+Forfait : <%= @message[:forfait_acquisition] %>
+Type d'équipement recherché : <%= @message[:type_equipement] %>
+
+Le message est le suivant :
+
+<%= @message[:message] %>
+
+Envoi fait le <%= Time.now %> avec l'adress ip suivante : <%= @message[:ip_address] %>

@@ -1,0 +1,23 @@
+Contact site web LAVOIE - Inspection technique
+===============================================
+
+Une personne (<%=@message[:name] %> -  <%=@message[:email] %>)
+a effectué une commande libre de pièces depuis le site web.
+
+Informations :
+
+Nom :  <%= @parts_order.name %>
+Courriel :  <%= @parts_order.email %>
+Téléphone :  <%= @parts_order.phone %>
+
+Détails de la commande :
+
+<% @parts_order.parts_order_items.each do |item| %>
+    ----------------------------------------------------------------------------
+    Marque : <%= item.marque %>
+    Référence : <%= item.reference %>
+    Quantité : <%= item.quantite %>
+    ----------------------------------------------------------------------------
+<% end %>
+
+Envoi fait le <%= Time.now %> avec l'adress ip suivante : <%= @message[:ip_address] %>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Contact site web</h1>
+    <p>
+        Une personne ( <%= @message[:name] %> - <%= @message[:email] %> ) a effectué une demande de contact
+        depuis le site internet de LAVOIE.
+    </p>
+    <p>
+        <%= @message[:message] %>
+    </p>
+
+    <p><small>Envoi fait le <%= Time.now %> avec l'adresse IP suivante : <%= @message[:ip_address] %></small></p>
+  </body>
+</html>

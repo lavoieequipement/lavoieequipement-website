@@ -1,0 +1,10 @@
+Contact site web LAVOIE - Candidature : <%= @message[:poste] %>
+===============================================
+
+Une personne (<%=@message[:name] %> -  <%=@message[:email] %>)
+a déposé sa candidature pour le poste <%= @message[:poste]  %> depuis le site web.
+Le message est le suivant :
+
+Son Curriculum Vitae et sa lettre de présentation sont en pièces jointes.
+
+Envoi fait le <%= Time.now %> avec l'adress ip suivante : <%= @message[:ip_address] %>

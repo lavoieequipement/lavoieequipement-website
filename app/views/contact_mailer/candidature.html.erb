@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Contact site web - Candidature : <%= @message[:poste] %></h1>
+    <p>
+        Une personne ( <%= @message[:name] %> - <%= @message[:email] %> ) a déposé
+        sa candidature pour le poste <strong> <%= @message[:poste] %> </strong> depuis le site internet de LAVOIE.
+    </p>
+
+    <p>Son Curriculum Vitae et sa lettre de présentation sont en pièces jointes.</p>
+
+    <p><small>Envoi fait le <%= Time.now %> avec l'adresse IP suivante : <%= @message[:ip_address] %></small></p>
+  </body>
+</html>

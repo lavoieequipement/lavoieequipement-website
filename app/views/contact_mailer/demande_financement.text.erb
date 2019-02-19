@@ -1,0 +1,15 @@
+Contact site web LAVOIE - Demande de financement
+===============================================
+
+Une personne (  <%=@message[:name] %> -  <%=@message[:email] %>   -  <%=@message[:phone] %>  )
+a effectué une demande de contact pour une demande de financement depuis le site web.
+
+
+Type de financement : <%= @message[:forfait_financement] %>
+Type d'équipement : <%= @message[:type_equipement] %>
+
+Le message est le suivant :
+
+<%= @message[:message] %>
+
+Envoi fait le <%= Time.now %> avec l'adress ip suivante : <%= @message[:ip_address] %>

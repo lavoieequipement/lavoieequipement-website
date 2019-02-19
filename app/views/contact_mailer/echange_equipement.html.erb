@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Contact site web - Echange d'équipement</h1>
+    <p>
+        Une personne ( <%= @message[:name] %> - <%= @message[:email] %> - <%= @message[:phone] %>) a effectué une demande de contact
+        pour une <strong>valeur d'échange d'équipement</strong> depuis le site internet de LAVOIE.
+    </p>
+
+    <p>La demande concerne : <strong><%= @message[:equipment].brand.name %> - <%= @message[:equipment].brand_model.name %> - Année <%= @message[:equipment].year %> à <%= number_to_currency(@message[:equipment].price) %></strong></p>
+    <p><strong>Echange proposé : <%= @message[:type_evaluation] %></strong></p>
+
+    <ul>
+        <li><strong>Marque</strong>: <%= @message[:marque_equipement_echange] %></li>
+        <li><strong>Modèle</strong>: <%= @message[:modele_equipement_echange] %></li>
+        <li><strong>Année</strong>: <%= @message[:annee_equipement_echange] %></li>
+        <li><strong>Heures d'utilisation</strong>: <%= @message[:heures_equipement_echange] %></li>
+    </ul>
+
+    <p><strong>Prix demandé :</strong> <%= number_to_currency(@message[:prix_equipement_echange]) %></p>
+
+    <p><small>Envoi fait le <%= Time.now %> avec l'adresse IP suivante : <%= @message[:ip_address] %></small></p>
+  </body>
+</html>

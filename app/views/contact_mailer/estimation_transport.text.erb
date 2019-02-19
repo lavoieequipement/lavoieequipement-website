@@ -1,0 +1,10 @@
+Contact site web LAVOIE - Estimation de transport
+===============================================
+
+Une personne (<%=@message[:name] %> -  <%=@message[:email] %>)
+a effectué une demande de contact pour une estimation de transport depuis le site web.
+Le message est le suivant :
+
+<%= @message[:message] %>
+
+Envoi fait le <%= Time.now %> avec l'adress ip suivante : <%= @message[:ip_address] %>

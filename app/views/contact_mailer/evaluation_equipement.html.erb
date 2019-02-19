@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Contact site web - Evaluation d'équipement</h1>
+    <p>
+        Une personne ( <%= @message[:name] %> - <%= @message[:email] %> - <%= @message[:phone] %>) a effectué une demande de contact
+        pour <strong>évaluation d'équipement</strong> depuis le site internet de LAVOIE.
+    </p>
+    <p><strong>Type d'évaluation : <%= @message[:type_evaluation] %></strong></p>
+    <p>
+        <%= @message[:message] %>
+    </p>
+
+    <p><small>Envoi fait le <%= Time.now %> avec l'adresse IP suivante : <%= @message[:ip_address] %></small></p>
+  </body>
+</html>

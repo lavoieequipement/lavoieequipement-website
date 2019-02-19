@@ -1,0 +1,14 @@
+Contact site web LAVOIE - Recherche Approfondie
+===============================================
+
+Une personne (<%=@message[:name] %> -  <%=@message[:email] %>)
+a effectué une demande de contact pour une recherche approfondie depuis le site web.
+
+Forait : <%= @message[:forfait_recherche] %>
+
+La demande est la suivnate :
+
+
+<%= @message[:message] %>
+
+Envoi fait le <%= Time.now %> avec l'adress ip suivante : <%= @message[:ip_address] %>

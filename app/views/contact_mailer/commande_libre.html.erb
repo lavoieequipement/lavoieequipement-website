@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Contact site web - Commande libre</h1>
+    <p>
+        Une personne ( <%= @message[:name] %> - <%= @message[:email] %> ) a effectué une commande libre de pièces
+        depuis le site internet de LAVOIE.
+    </p>
+
+    <h3>Résumé de la commande</h3>
+    <p><strong>Informations :</strong>
+
+    <ul>
+        <li><strong>Nom</strong> :  <%= @parts_order.name %></li>
+        <li><strong>Courriel</strong> :  <%= @parts_order.email %></li>
+        <li><strong>Téléphone</strong> :  <%= @parts_order.phone %></li>
+    </ul>
+
+    <br>
+
+    <p><strong>Détail de la commande :</strong>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Marque</th>
+                <th>Référence</th>
+                <th>Quantité</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @parts_order.parts_order_items.each do |item| %>
+            <tr>
+                <td><%= item.marque %></td>
+                <td><%= item.reference %></td>
+                <td><%= item.quantite %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+    <p><small>Envoi fait le <%= Time.now %> avec l'adresse IP suivante : <%= @message[:ip_address] %></small></p>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Contact site web - Estimation de transport</h1>
+    <p>
+        Une personne (<strong><%= @message[:phone] %></strong>) a effectué une demande de contact
+        pour <strong>une estimation de transport</strong> depuis le site internet de LAVOIE.
+    </p>
+
+    <ul>
+        <li><strong> Départ:  </strong> <%= @message[:location_start] %></li>
+        <li><strong>Arrivée:  </strong> <%= @message[:location_end] %></li>
+        <li><strong>Type de chargement :</strong> <%= @message[:type_chargement] %>  </li>
+        <li><strong>Hors-normes :</strong> <%= @message[:hors_normes] %>  </li>
+    </ul>
+
+
+    <p><small>Envoi fait le <%= Time.now %> avec l'adresse IP suivante : <%= @message[:ip_address] %></small></p>
+  </body>
+</html>

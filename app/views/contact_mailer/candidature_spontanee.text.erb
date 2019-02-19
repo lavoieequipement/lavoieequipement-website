@@ -1,0 +1,10 @@
+Contact site web LAVOIE - Candidature spontanée
+===============================================
+
+Une personne (<%=@message[:name] %> -  <%=@message[:email] %>)
+a déposé sa candidature spontanée depuis le site internet de LAVOIE.
+Le message est le suivant :
+
+<%= @message[:message] %>
+
+Envoi fait le <%= Time.now %> avec l'adress ip suivante : <%= @message[:ip_address] %>

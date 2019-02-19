@@ -1,0 +1,13 @@
+Contact site web LAVOIE - Inspection technique
+===============================================
+
+Une personne (<%=@message[:name] %> -  <%=@message[:email] %> - <%=@message[:phone] %>)
+a effectué une demande de contact pour une inspection technique depuis le site web.
+
+Forfait: <%= @message[:forfait_inspection] %>
+
+Le message est le suivant :
+
+<%= @message[:message] %>
+
+Envoi fait le <%= Time.now %> avec l'adress ip suivante : <%= @message[:ip_address] %>

@@ -1,0 +1,17 @@
+Contact site web LAVOIE - Evaluation d'équipement
+===============================================
+
+Une personne a effectué une demande de contact pour une évaluation d'équipement depuis le site web.
+
+Type d'évaluation : <%= @message[:type_evaluation] %>
+Le message est le suivant :
+---
+
+<%= @message[:message] %>
+
+---
+Nom : <%=@message[:name] %>
+email :<%=@message[:email] %>
+Téléphone :<%=@message[:phone] %>
+
+Envoi fait le <%= Time.now %> avec l'adress ip suivante : <%= @message[:ip_address] %>

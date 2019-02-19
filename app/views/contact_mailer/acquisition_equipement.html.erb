@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Contact site web - Acquisition d'équipement</h1>
+    <p>
+        Une personne ( <%= @message[:name] %> - <%= @message[:email] %> - <%= @message[:phone] %>  ) a effectué une demande de contact
+        pour <strong>faire l'acquisition d'un équipement</strong> depuis le site internet de LAVOIE.
+    </p>
+    <p>
+        <strong>Forfait d'acquisition :</strong> <%= @message[:forfait_acquisition] %><br>
+        <strong>Type d'équipement recherché :</strong> <%= @message[:type_equipement] %>
+     </p>
+    <p>
+        <%= @message[:message] %>
+    </p>
+
+    <p><small>Envoi fait le <%= Time.now %> avec l'adresse IP suivante : <%= @message[:ip_address] %></small></p>
+  </body>
+</html>
